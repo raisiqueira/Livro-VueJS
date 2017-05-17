@@ -1,51 +1,29 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
-      <my-menu title="Propriedade do Menu" v-on:menu-click="OnMenuClick">
-          <ul>
-              <li>Slot 1</li>
-              <li>Slot 2</li>
-              <li>Slot 3</li>
-          </ul>
-      </my-menu>
+    <app-header></app-header>
+
+    <app-content></app-content>
+
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-  import MyMenu from './Mymenu.vue'
+  import AppHeader from './layouts/AppHeader.vue'
+  import AppContent from './layouts/AppContent.vue'
+  import AppFooter from './layouts/AppFooter.vue'
 
 export default {
   name: 'app',
-    components:{
-      MyMenu
+    components: {
+      AppHeader, AppContent, AppFooter
     },
-
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    created: function () {
+        Materialize.toast('Olar', 1000)
     }
-  },
-
-  methods: {
-      OnMenuClick: function(e) {
-          alert("Click no Menu")
-      }
-  }
 }
 </script>
 
 <style scoped>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-
-h1, h2 {
-  font-weight: normal;
-}
 </style>
