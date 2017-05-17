@@ -2,7 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 
-const router = new VueRouter()
+import Hello from './components/Hello.vue'
+
+const router = new VueRouter({
+    routes: [
+        { path:'/', component: Hello }
+    ]
+})
 
 Vue.use(VueRouter)
 

@@ -1,5 +1,5 @@
 <template>
-<h4>Olar</h4>
+<h4>Olar Router</h4>
 </template>
 
 <script>
